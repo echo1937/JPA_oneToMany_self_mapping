@@ -14,7 +14,7 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
     @EntityGraph(value = "Category.Graph", type = EntityGraph.EntityGraphType.FETCH)
     List<Category> findAll();
 
-    @EntityGraph(value = "Category.Graph", type = EntityGraph.EntityGraphType.FETCH)  // 无效, 始终存在N+1问题
+//    @EntityGraph(value = "Category.Graph", type = EntityGraph.EntityGraphType.FETCH)  // 无效, 始终存在N+1问题
     Category findByName(String name);
 
     @EntityGraph(value = "Category.Graph", type = EntityGraph.EntityGraphType.FETCH)  // 无效, 始终存在N+1问题

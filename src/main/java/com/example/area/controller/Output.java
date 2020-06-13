@@ -26,6 +26,7 @@ public class Output {
     @GetMapping("category/name/{name}")
     public Category getCategoryByName(@PathVariable String name) {
         // 虽然findByName(String name)添加了@EntityGraph，但是没有起作用, 依然存在N+1问题
+        // List<Category> categories = categoryRepository.findAll(); // 执行一次findAll()方法，findByName()方法就不会触发N+1问题
         return categoryRepository.findByName(name);
     }
 

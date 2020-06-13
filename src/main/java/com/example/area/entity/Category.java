@@ -21,7 +21,7 @@ import java.util.List;
 @NamedEntityGraph(name = "Category.Graph", attributeNodes = {@NamedAttributeNode("children")})
 public class Category {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     // 分类名
